@@ -1,5 +1,209 @@
-$bgColor: rgb(227, 14, 14);
+@use 'variaveis' as *;
+@use 'mixins';
+@use 'hero';
+@use 'sinopse';
+@use 'faq';
+@use 'assistir';
+@use 'footer';
+
+// _____________________________________________________________
+// ESTILOS GLOBAIS
+// _____________________________________________________________
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-principal;
+    list-style: none;
+}
 
 body {
-    background-color: $bgColor;
+    background-color: $cor-fundo;
+    color: $cor-texto-principal;
+}
+
+// CLASSES DE TEXTO
+.text {
+    @include text-style($font-size-base, $line-height-base);
+
+    &--big {
+        @include text-style($font-size-lg, $line-height-lg);
+    }
+
+    &--small {
+        @include text-style($font-size-sm, $line-height-sm);
+    }
+}
+
+.title {
+    @include title-style($title-size-md, $title-line-md);
+
+    &--small {
+        @include title-style($title-size-sm, $title-line-sm);
+    }
+
+    &--big {
+        @include title-style($title-size-lg, $title-line-lg);
+    }
+}
+
+// BOTÃO PADRÃO
+.button {
+    @include flex-center;
+    width: 100%;
+    height: $button-height;
+    font-size: $button-font-size;
+    color: $cor-texto-secundario;
+    background-color: $cor-botao-azul;
+    text-transform: uppercase;
+    border-radius: $border-radius-sm;
+    text-decoration: none;
+    padding: $button-padding;
+    letter-spacing: $letter-spacing-base;
+    border: none;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+
+    @include transition(filter, 0.5s, ease);
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+
+    &--secundario {
+        background-color: $cor-botao-destaque;
+        border-color: $cor-botao-destaque;
+    }
+
+    &--dark {
+        background-color: $cor-overlay-dark;
+        border: 1px solid $cor-texto-secundario;
+
+        &:hover {
+            background-color: $cor-texto-secundario;
+            color: $cor-preto;
+            filter: none;
+        }
+    }
+}
+
+// HEADER
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $cor-fundo;
+    z-index: $z-header;
+    padding: $spacing-xs $spacing-xl;
+
+    @include transition(background-color, 0.4s, ease);
+
+    &--is-hidden {
+        background-color: transparent;
+
+        .header__logo,
+        .header__nav {
+            opacity: 0;
+            visibility: hidden;
+            @include transition(opacity, 0.3s, ease);
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__logo {
+        max-width: none;
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        @include transition(opacity, 0.5s, ease);
+
+        img {
+            height: 100%;
+            width: auto;
+            display: block;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: $gap-medium;
+
+        @include transition(opacity, 0.5s, ease);
+
+        a {
+            color: $cor-texto-secundario;
+            text-decoration: none;
+            font-size: $nav-font-size;
+            font-weight: $font-weight-medium;
+            padding-bottom: $spacing-xxs;
+            border-bottom: 3px solid transparent;
+
+            @include transition(border-color, 0.2s, ease);
+
+            &:hover {
+                border-bottom-color: $cor-texto-secundario;
+            }
+        }
+    }
+}
+
+// RESPONSIVO
+@include responsive(mobile) {
+    .header {
+        padding: $spacing-xs $spacing-md;
+
+        &__nav {
+            gap: $gap-small;
+
+            a {
+                font-size: $nav-font-size-mobile;
+            }
+        }
+    }
+
+    .title {
+        font-size: $title-size-mobile;
+        line-height: $title-line-mobile;
+
+        &--big {
+            font-size: $title-size-mobile;
+        }
+    }
+
+    .button {
+        height: $button-height-mobile;
+        font-size: $button-font-size-mobile;
+    }
+}
+
+// UTILITÁRIOS
+.link-text {
+    color: $cor-texto-secundario;
+    text-decoration: underline;
+}
+
+.mt-4 {
+    margin-top: $spacing-lg;
+}
+
+.mb-2 {
+    margin-bottom: $spacing-md;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
 }

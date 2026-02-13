@@ -1,0 +1,41 @@
+@import 'variaveis';
+
+.section-sinopse {
+    padding: $padding-section;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: $gap-large;
+}
+
+.sinopse {
+    &__text {
+        h2 {
+            margin-bottom: $gap-medium;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+    }
+
+    &__image {
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+        }
+    }
+}
+
+@include responsive(mobile) {
+    .section-sinopse {
+        grid-template-columns: 1fr;
+    }
+
+    .sinopse__image {
+        grid-row: 1;
+    }
+}

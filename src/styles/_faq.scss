@@ -1,0 +1,92 @@
+
+@import 'variaveis';
+
+.faq {
+    padding: $padding-section;
+    background-color: #0a0c14;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    &__questions {
+        &__item {
+            background-color: $cor-faq-bg;
+            margin-bottom: $gap-small;
+            border-radius: 8px;
+
+            &__question {
+                color: $cor-texto-secundario;
+                font-size: 20px;
+                padding: 24px;
+                padding-right: 60px;
+                cursor: pointer;
+                position: relative;
+                font-weight: 600;
+
+                &::after {
+                    content: '+';
+                    position: absolute;
+                    top: 0;
+                    right: 24px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    font-size: 44px;
+                    @include transition(transform, 0.3s, ease);
+                }
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: '–';
+                    transform: rotate(180deg);
+                }
+            }
+
+            &__answer {
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 24px;
+                @include transition(max-height padding, 0.4s, ease);
+                background-color: #1e212c;
+                color: #ddd;
+                border-radius: 0 0 8px 8px;
+            }
+
+            &--is-open &__answer {
+                max-height: 400px;
+                padding: 24px;
+            }
+        }
+    }
+}
+
+.ficha-tecnica {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gap-small;
+}
+
+.ficha-item {
+    display: flex;
+    gap: 8px;
+}
+
+.ficha-label {
+    font-weight: 700;
+    color: $cor-texto-secundario;
+    min-width: 110px;
+}
+
+@include responsive(mobile) {
+    .ficha-tecnica {
+        grid-template-columns: 1fr;
+    }
+
+    .faq__questions__item__question {
+        font-size: 18px;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,32 @@
+
+@import 'variaveis';
+
+.footer {
+    padding: 40px 8px 30px;
+    background-color: #0a0a14;
+    border-top: 1px solid #2a2e3f;
+
+    &__container {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__logo {
+        width: 100px;
+        margin-bottom: 24px;
+    }
+
+    &__assinatura {
+        margin-top: 32px;
+        font-size: 18px;
+        color: #b9b9c2;
+        font-style: italic;
+        border-top: 1px solid #333;
+        padding-top: $gap-medium;
+
+        strong {
+            color: #a7c0e0;
+        }
+    }
+}

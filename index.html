@@ -1,12 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>favorite movie</title>
-    <link rel="stylesheet" href="dist/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>gold movie</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./dist/css/main.css">
 </head>
+
 <body>
-    <h1>ola</h1>
+    <header class="header" id="mainHeader">
+        <div class="header__container">
+            <div class="header__logo">
+                <span class="header__logo-title">
+                    Where the Green <span class="header__logo-accent">Ants Dream</span>
+                </span>
+            </div>
+            <nav class="header__nav">
+                <a href="#hero" data-section>About</a>
+                <a href="#sinopse" data-section>Synopsis</a>
+                <a href="#faq" data-section>Movie Info</a>
+                <a href="#assistir" data-section>Where to Watch</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero__content">
+            <div class="hero__content__branding">
+                <img src="./dist/images/hero.jpg" alt="where the green ants dream"
+                    style="max-width: 100%; background: transparent;">
+            </div>
+            <h3 class="title--small">A dreamlike journey in the heart of the Outback</h3>
+            <p class="text">
+                “Where the Green Ants Dream" is a sensory immersion into indigenous culture and the struggle for land.
+                Based on facts and legends, the film follows a young shaman in search of balance between worlds".</p>
+            <div class="hero__button">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+                    class="button button--secundario">► trailer</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sinopse" class="section-sinopse">
+        <div class="sinopse__text">
+            <h2 class="title">Synopsis </h2>
+            <p class="text--big">
+                <strong>Where the Green Ants Dream</strong>-The central conflict arises when the geologist leading the
+                team, Lance Hackett, finds himself caught
+                between the industrial demands of his employers and the spiritual beliefs of the Aboriginal people. The
+                dispute escalates to a court case, highlighting the philosophical and legal clash between modern
+                development and traditional beliefs.
+            </p>
+            <p class="text--big">
+                Directed by <strong>Werner Herzog</strong>.
+            </p>
+        </div>
+        <div class="sinopse__image">
+            <img src="./dist/images/onde assitir.jpg" alt="Cena do filme formigas verdes" loading="lazy">
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2 class="title">FAQ</h2>
+        <ul class="faq__questions">
+            <!-- ITEM 1: Ficha completa -->
+            <li class="faq__questions__item faq__questions__item--is-open" data-faq-item>
+                <div class="faq__questions__item__question" data-faq-question>
+                    📋 Movie info
+                </div>
+                <<div class="faq__questions__item__answer text--big">
+                    <div class="ficha-tecnica">
+                        <div class="ficha-item"><span class="ficha-label">Title:</span> Where the Green Ants Dream</div>
+                        <div class="ficha-item"><span class="ficha-label">Country:</span> West Germany, Australia</div>
+                        <div class="ficha-item"><span class="ficha-label">Year:</span> 1984</div>
+                        <div class="ficha-item"><span class="ficha-label">Duration:</span> 100 min</div>
+                        <div class="ficha-item"><span class="ficha-label">Direction:</span> Werner Herzog</div>
+                        <div class="ficha-item"><span class="ficha-label">Screenplay:</span> Werner Herzog, Bob Ellis
+                        </div>
+                        <div class="ficha-item"><span class="ficha-label">Cinematography:</span> Jörg Schmidt-Reitwein
+                        </div>
+                        <div class="ficha-item"><span class="ficha-label">Music:</span> Gabriel Fauré, Wandjuk Marika
+                        </div>
+                        <div class="ficha-item"><span class="ficha-label">Cast:</span> Bruce Spence, Wandjuk Marika, Roy
+                            Marika</div>
+                        <div class="ficha-item"><span class="ficha-label">Genre:</span> Drama</div>
+                    </div>
+                    </div>
+            </li>
+            <li class="faq__questions__item" data-faq-item>
+                <div class="faq__questions__item__question" data-faq-question>
+                    🎬 Filming Locations
+                </div>
+                <div class="faq__questions__item__answer text--big">
+                    <p>The film was shot primarily in the <strong>Australian Outback</strong>, specifically around the
+                        Coober Pedy desert region in South Australia. The harsh, lunar-like landscapes were chosen to
+                        emphasize the isolation of the mining site.</p>
+                </div>
+            </li>
+
+            <li class="faq__questions__item" data-faq-item>
+                <div class="faq__questions__item__question" data-faq-question>
+                    🏆 Awards and Festivals
+                </div>
+                <div class="faq__questions__item__answer text--big">
+                    <p>• Nominated for the <strong>Palme d'Or</strong> – Cannes Film Festival (1984)<br>
+                        • Winner of <strong>Outstanding Feature Film</strong> – German Film Awards (1984)<br>
+                        • Official Selection at the Toronto International Film Festival (1984)</p>
+                </div>
+            </li>
+
+            <li class="faq__questions__item" data-faq-item>
+                <div class="faq__questions__item__question" data-faq-question>
+                    🐜 Meaning of the Title
+                </div>
+                <div class="faq__questions__item__answer text--big">
+                    <p>The title refers to the <strong>Aboriginal mythology</strong> depicted in the film. The Green
+                        Ants
+                        are considered ancestral beings whose "dreaming" maintains the world's balance. If their sleep
+                        is disturbed by mining, it is believed the world will end.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section id="assistir" class="watch-section">
+        <div class="watch-content">
+            <h2 class="title">Where To Watch</h2>
+            <p class="text--big">
+                A geologist employed by an Australian mining company finds himself disputing the rights of some
+                aborigines who believe their land to be sacred.
+
+            </p>
+            <a href="https://www.youtube.com/watch?v=qfCELnf59Uk&t=2623s" target="_blank" class="button button--watch">▶
+            </a>
+        </div>
+        <div class="watch-image">
+            <img src="./dist/images/shows.jpg" alt="watch image" loading="lazy">
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="text--small" style="color: #aaa; max-width: 700px; margin: 0 auto;">
+                Page dedicated to the film "Where the Green Ants Dream", a project developed for educational purposes.
+            </p>
+            <p class="text--small" style="margin-top: 32px; opacity: 0.6;">
+                © 2026 Emílio Barbosa.
+            </p>
+        </div>
+    </footer>
+    <script src="./dist/js/main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,51 @@
+@use 'variaveis';
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: $padding-section;
+    display: flex;
+    align-items: center;
+
+    // IMAGEM PRINCIPAL
+    background-image:
+        linear-gradient(to right,
+            rgba(0, 0, 0, 0.85) 25%,
+            rgba(0, 0, 0, 0.5) 55%,
+            rgba(0, 0, 0, 0.2) 100%),
+        url('../images/hero.jpg'); // ajuste o caminho se necessário
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        max-width: 650px;
+        color: $cor-texto-secundario;
+
+        &__branding {
+            display: none; // removemos pois agora a imagem é o fundo
+        }
+    }
+
+    .title--small {
+        margin-bottom: 24px;
+        font-size: 32px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    .text {
+        margin-bottom: 32px;
+        font-size: 20px;
+        line-height: 1.6;
+        max-width: 90%;
+    }
+
+    &__button {
+        max-width: 280px;
+    }
+}

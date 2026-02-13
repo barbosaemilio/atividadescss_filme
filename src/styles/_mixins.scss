@@ -1,0 +1,51 @@
+// _____________________________________________________________
+// MIXINS
+// _____________________________________________________________
+
+// TEXT STYLES
+@mixin text-style($size: 16px, $line: 26px) {
+    font-size: $size;
+    line-height: $line;
+    color: $cor-texto-principal;
+}
+
+// TITLE STYLES
+@mixin title-style($size: 40px, $line: 50px) {
+    font-size: $size;
+    line-height: $line;
+    color: $cor-texto-secundario;
+    font-weight: 700;
+}
+
+// FLEX CENTER
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// TRANSITION
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+    transition: $property $duration $ease;
+}
+
+// RESPONSIVE BREAKPOINTS
+@mixin responsive($breakpoint) {
+    @if $breakpoint ==mobile {
+        @media (max-width: $mobile) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (max-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==desktop {
+        @media (max-width: $desktop) {
+            @content;
+        }
+    }
+}
