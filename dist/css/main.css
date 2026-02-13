@@ -16,6 +16,7 @@
   z-index: 2;
   max-width: 650px;
   color: #f9f9f9;
+  padding-left: 60px;
 }
 .hero__content__branding {
   display: none;

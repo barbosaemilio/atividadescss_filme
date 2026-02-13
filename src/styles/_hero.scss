@@ -25,6 +25,7 @@
         z-index: 2;
         max-width: 650px;
         color: variaveis.$cor-texto-secundario; 
+        padding-left: 60px;
 
         &__branding {
             display: none; // removemos pois agora a imagem é o fundo
