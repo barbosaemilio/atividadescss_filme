@@ -1,8 +1,7 @@
-
-@import 'variaveis';
-
+@use 'variaveis' as *;
+@use 'mixins' as *; 
 .faq {
-    padding: $padding-section;
+    padding: $padding-section; // Agora sem o prefixo 'variaveis.'
     background-color: #0a0c14;
 
     h2 {
@@ -12,12 +11,12 @@
 
     &__questions {
         &__item {
-            background-color: $cor-faq-bg;
-            margin-bottom: $gap-small;
+            background-color: $cor-faq-bg; // Esta variável precisa estar definida em variaveis.scss
+            margin-bottom: $gap-small; // Sem o prefixo
             border-radius: 8px;
 
             &__question {
-                color: $cor-texto-secundario;
+                color: $cor-texto-secundario; // Sem o prefixo
                 font-size: 20px;
                 padding: 24px;
                 padding-right: 60px;
@@ -66,7 +65,7 @@
 .ficha-tecnica {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: $gap-small;
+    gap: $gap-small; // Sem o prefixo
 }
 
 .ficha-item {
@@ -76,7 +75,7 @@
 
 .ficha-label {
     font-weight: 700;
-    color: $cor-texto-secundario;
+    color: $cor-texto-secundario; // Sem o prefixo
     min-width: 110px;
 }
 

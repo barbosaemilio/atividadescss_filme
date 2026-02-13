@@ -1,4 +1,4 @@
-@use 'variaveis' as *;
+@use 'variaveis';
 @use 'mixins';
 @use 'hero';
 @use 'sinopse';
@@ -14,75 +14,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: $font-principal;
+    font-family: variaveis.$font-principal;
     list-style: none;
 }
 
 body {
-    background-color: $cor-fundo;
-    color: $cor-texto-principal;
+    background-color: variaveis.$cor-fundo;
+    color: variaveis.$cor-texto-principal;
 }
 
 // CLASSES DE TEXTO
 .text {
-    @include text-style($font-size-base, $line-height-base);
+    @include mixins.text-style(variaveis.$font-size-base, variaveis.$line-height-base);
 
     &--big {
-        @include text-style($font-size-lg, $line-height-lg);
+        @include mixins.text-style(variaveis.$font-size-lg, variaveis.$line-height-lg);
     }
 
     &--small {
-        @include text-style($font-size-sm, $line-height-sm);
+        @include mixins.text-style(variaveis.$font-size-sm, variaveis.$line-height-sm);
     }
 }
 
 .title {
-    @include title-style($title-size-md, $title-line-md);
+    @include mixins.title-style(variaveis.$title-size-md, variaveis.$title-line-md);
 
     &--small {
-        @include title-style($title-size-sm, $title-line-sm);
+        @include mixins.title-style(variaveis.$title-size-sm, variaveis.$title-line-sm);
     }
 
     &--big {
-        @include title-style($title-size-lg, $title-line-lg);
+        @include mixins.title-style(variaveis.$title-size-lg, variaveis.$title-line-lg);
     }
 }
 
 // BOTÃO PADRÃO
 .button {
-    @include flex-center;
+    @include mixins.flex-center;
     width: 100%;
-    height: $button-height;
-    font-size: $button-font-size;
-    color: $cor-texto-secundario;
-    background-color: $cor-botao-azul;
+    height: variaveis.$button-height;
+    font-size: variaveis.$button-font-size;
+    color: variaveis.$cor-texto-secundario;
+    background-color: variaveis.$cor-botao-azul;
     text-transform: uppercase;
-    border-radius: $border-radius-sm;
+    border-radius: variaveis.$border-radius-sm;
     text-decoration: none;
-    padding: $button-padding;
-    letter-spacing: $letter-spacing-base;
+    padding: variaveis.$button-padding;
+    letter-spacing: variaveis.$letter-spacing-base;
     border: none;
-    font-weight: $font-weight-semibold;
+    font-weight: variaveis.$font-weight-semibold;
     cursor: pointer;
 
-    @include transition(filter, 0.5s, ease);
+    @include mixins.transition(filter, 0.5s, ease);
 
     &:hover {
         filter: brightness(1.2);
     }
 
     &--secundario {
-        background-color: $cor-botao-destaque;
-        border-color: $cor-botao-destaque;
+        background-color: variaveis.$cor-botao-destaque;
+        border-color: variaveis.$cor-botao-destaque;
     }
 
     &--dark {
-        background-color: $cor-overlay-dark;
-        border: 1px solid $cor-texto-secundario;
+        background-color: variaveis.$cor-overlay-dark;
+        border: 1px solid variaveis.$cor-texto-secundario;
 
         &:hover {
-            background-color: $cor-texto-secundario;
-            color: $cor-preto;
+            background-color: variaveis.$cor-texto-secundario;
+            color: variaveis.$cor-preto;
             filter: none;
         }
     }
@@ -94,11 +94,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $cor-fundo;
-    z-index: $z-header;
-    padding: $spacing-xs $spacing-xl;
+    background-color: variaveis.$cor-fundo;
+    z-index: variaveis.$z-header;
+    padding: variaveis.$spacing-xs variaveis.$spacing-xl;
 
-    @include transition(background-color, 0.4s, ease);
+    @include mixins.transition(background-color, 0.4s, ease);
 
     &--is-hidden {
         background-color: transparent;
@@ -107,7 +107,7 @@ body {
         .header__nav {
             opacity: 0;
             visibility: hidden;
-            @include transition(opacity, 0.3s, ease);
+            @include mixins.transition(opacity, 0.3s, ease);
         }
     }
 
@@ -125,7 +125,7 @@ body {
         align-items: flex-start;
         justify-content: flex-start;
 
-        @include transition(opacity, 0.5s, ease);
+        @include mixins.transition(opacity, 0.5s, ease);
 
         img {
             height: 100%;
@@ -136,68 +136,68 @@ body {
 
     &__nav {
         display: flex;
-        gap: $gap-medium;
+        gap: variaveis.$gap-medium;
 
-        @include transition(opacity, 0.5s, ease);
+        @include mixins.transition(opacity, 0.5s, ease);
 
         a {
-            color: $cor-texto-secundario;
+            color: variaveis.$cor-texto-secundario;
             text-decoration: none;
-            font-size: $nav-font-size;
-            font-weight: $font-weight-medium;
-            padding-bottom: $spacing-xxs;
+            font-size: variaveis.$nav-font-size;
+            font-weight: variaveis.$font-weight-medium;
+            padding-bottom: variaveis.$spacing-xxs;
             border-bottom: 3px solid transparent;
 
-            @include transition(border-color, 0.2s, ease);
+            @include mixins.transition(border-color, 0.2s, ease);
 
             &:hover {
-                border-bottom-color: $cor-texto-secundario;
+                border-bottom-color: variaveis.$cor-texto-secundario;
             }
         }
     }
 }
 
 // RESPONSIVO
-@include responsive(mobile) {
+@include mixins.responsive(mobile) {
     .header {
-        padding: $spacing-xs $spacing-md;
+        padding: variaveis.$spacing-xs variaveis.$spacing-md;
 
         &__nav {
-            gap: $gap-small;
+            gap: variaveis.$gap-small;
 
             a {
-                font-size: $nav-font-size-mobile;
+                font-size: variaveis.$nav-font-size-mobile;
             }
         }
     }
 
     .title {
-        font-size: $title-size-mobile;
-        line-height: $title-line-mobile;
+        font-size: variaveis.$title-size-mobile;
+        line-height: variaveis.$title-line-mobile;
 
         &--big {
-            font-size: $title-size-mobile;
+            font-size: variaveis.$title-size-mobile;
         }
     }
 
     .button {
-        height: $button-height-mobile;
-        font-size: $button-font-size-mobile;
+        height: variaveis.$button-height-mobile;
+        font-size: variaveis.$button-font-size-mobile;
     }
 }
 
 // UTILITÁRIOS
 .link-text {
-    color: $cor-texto-secundario;
+    color: variaveis.$cor-texto-secundario;
     text-decoration: underline;
 }
 
 .mt-4 {
-    margin-top: $spacing-lg;
+    margin-top: variaveis.$spacing-lg;
 }
 
 .mb-2 {
-    margin-bottom: $spacing-md;
+    margin-bottom: variaveis.$spacing-md;
 }
 
 .w-100 {

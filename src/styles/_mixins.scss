@@ -2,6 +2,8 @@
 // MIXINS
 // _____________________________________________________________
 
+@use 'variaveis' as *;
+
 // TEXT STYLES
 @mixin text-style($size: 16px, $line: 26px) {
     font-size: $size;
@@ -38,13 +40,20 @@
     }
 
     @else if $breakpoint ==tablet {
-        @media (max-width: $tablet) {
+        @media (min-width: $mobile + 1) and (max-width: $tablet) {
+            // Para tablet, geralmente usamos min-width para evitar sobreposição
             @content;
         }
     }
 
     @else if $breakpoint ==desktop {
-        @media (max-width: $desktop) {
+        @media (min-width: $tablet + 1) and (max-width: $desktop) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==large {
+        @media (min-width: $desktop + 1) {
             @content;
         }
     }

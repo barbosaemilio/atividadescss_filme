@@ -4,7 +4,7 @@
     position: relative;
     min-height: 100vh;
     width: 100%;
-    padding: $padding-section;
+    padding: 0;
     display: flex;
     align-items: center;
 
@@ -24,7 +24,7 @@
         position: relative;
         z-index: 2;
         max-width: 650px;
-        color: $cor-texto-secundario;
+        color: variaveis.$cor-texto-secundario; 
 
         &__branding {
             display: none; // removemos pois agora a imagem é o fundo

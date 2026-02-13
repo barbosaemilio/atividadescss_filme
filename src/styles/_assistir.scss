@@ -1,17 +1,18 @@
-
-@import 'variaveis';
+// CORRETO - Importando os dois módulos
+@use 'variaveis';
+@use 'mixins'; // <-- IMPORTANTE: importar os mixins!
 
 .watch-section {
-    padding: $padding-section;
+    padding: variaveis.$padding-section;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    background: linear-gradient(145deg, #0b0e1a 0%, $cor-fundo 100%);
+    background: linear-gradient(145deg, #0b0e1a 0%, variaveis.$cor-fundo 100%);
 }
 
 .watch {
     &-content {
-        padding-right: $gap-large;
+        padding-right: variaveis.$gap-large;
 
         h2 {
             margin-bottom: 24px;
@@ -38,7 +39,10 @@
     max-width: 280px;
 }
 
-@include responsive(mobile) {
+// CORREÇÃO AQUI: use 'mixins' em vez de 'variaveis'
+@include mixins.responsive(mobile) {
+
+    // <-- mudança crucial!
     .watch-section {
         grid-template-columns: 1fr;
         gap: 32px;

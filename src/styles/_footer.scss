@@ -1,5 +1,4 @@
-
-@import 'variaveis';
+@use 'variaveis'; 
 
 .footer {
     padding: 40px 8px 30px;
@@ -23,7 +22,7 @@
         color: #b9b9c2;
         font-style: italic;
         border-top: 1px solid #333;
-        padding-top: $gap-medium;
+        padding-top: variaveis.$gap-medium; // Namespace adicionado
 
         strong {
             color: #a7c0e0;

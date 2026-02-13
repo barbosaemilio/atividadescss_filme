@@ -6,17 +6,62 @@ $cor-botao-azul: #1f2ab0;
 $cor-botao-destaque: #0063e5;
 $cor-fundo-escuro: #000;
 $cor-faq-bg: #13151d;
+$cor-preto: #000;
+$cor-overlay-dark: rgba(0, 0, 0, 0.8);
 
 // FONTES
 $font-principal: 'Inter', 'Avenir', Helvetica, Arial, sans-serif;
+
+// TAMANHOS DE FONTE (TEXTO)
+$font-size-sm: 14px;
+$font-size-base: 18px; // <--- Declarada aqui para resolver o erro
+$font-size-lg: 20px;
+
+$line-height-sm: 1.2;
+$line-height-base: 1.5;
+$line-height-lg: 1.6;
+
+// TAMANHOS DE FONTE (TÍTULOS)
+$title-size-sm: 24px;
+$title-size-md: 32px;
+$title-size-lg: 44px;
+$title-size-mobile: 28px;
+
+$title-line-sm: 1.2;
+$title-line-md: 1.1;
+$title-line-lg: 1.1;
+$title-line-mobile: 1.1;
 
 // BREAKPOINTS
 $mobile: 768px;
 $tablet: 1024px;
 $desktop: 1280px;
 
-// ESPAÇAMENTOS
+// ESPAÇAMENTOS E GRID
 $padding-section: 5.6vw;
 $gap-large: 40px;
 $gap-medium: 28px;
 $gap-small: 16px;
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$z-header: 1000;
+
+// BOTÕES
+$button-height: 48px;
+$button-height-mobile: 40px;
+$button-padding: 12px 24px;
+$button-font-size: 18px;
+$button-font-size-mobile: 14px;
+$border-radius-sm: 4px;
+$letter-spacing-base: 1px;
+$font-weight-semibold: 600;
+$font-weight-medium: 500;
+
+// NAVBAR
+$nav-font-size: 16px;
+$nav-font-size-mobile: 14px;

@@ -1,17 +1,18 @@
-@import 'variaveis';
+@use 'variaveis';
+@use 'mixins'; // Importa os mixins
 
 .section-sinopse {
-    padding: $padding-section;
+    padding: variaveis.$padding-section;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: $gap-large;
+    gap: variaveis.$gap-large;
 }
 
 .sinopse {
     &__text {
         h2 {
-            margin-bottom: $gap-medium;
+            margin-bottom: variaveis.$gap-medium;
         }
 
         p {
@@ -30,7 +31,8 @@
     }
 }
 
-@include responsive(mobile) {
+// Usando o mixin responsive do arquivo mixins
+@include mixins.responsive(mobile) {
     .section-sinopse {
         grid-template-columns: 1fr;
     }
